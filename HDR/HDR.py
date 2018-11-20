@@ -37,6 +37,7 @@ hdrDrago = tonemapDrago.process(hdrDevec)
 hdrDrago = 3 * hdrDrago
 hdrDrago = hdrDrago * 255
 
+cv2.imwrite("images/hdrDrago.jpg", hdrDrago)
 hdr.append(hdrDrago)
 
 # Durand
@@ -46,6 +47,7 @@ hdrDurand = tonemapDurand.process(hdrDevec)
 hdrDurand = 3 * hdrDurand
 hdrDurand = 255 * hdrDurand
 
+cv2.imwrite("images/hdrDurand.jpg", hdrDurand)
 hdr.append(hdrDurand)
 
 # Reinhard
@@ -54,6 +56,7 @@ tonemapReinhard = cv2.createTonemapReinhard(1.5, 0, 0, 0)
 hdrReinhard = tonemapReinhard.process(hdrDevec)
 hdrReinhard = 255 * hdrReinhard
 
+cv2.imwrite("images/hdrReinhard.jpg", hdrReinhard)
 hdr.append(hdrReinhard)
 
 # Mantiuk
@@ -62,6 +65,7 @@ tonemapMantiuk = cv2.createTonemapMantiuk(2.2, 0.85, 1.2)
 hdrMantiuk = tonemapMantiuk.process(hdrDevec)
 hdrMantiuk = 255 * hdrMantiuk
 
+cv2.imwrite("images/hdrMantiuk.jpg", hdrMantiuk)
 hdr.append(hdrMantiuk)
 
 fig=plt.figure(figsize=(10, 10))
